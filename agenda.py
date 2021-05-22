@@ -36,12 +36,12 @@ def excluir_contato(contato):
 
 
 def imprimir_menu():
-    print('Essas sao as opcoes da agenda\n')
-    print('1- Mostrar todos os contatos\n')
-    print('2- Editar um contato da agenda\n')
-    print('3- Excluir um contato da agenda\n')
-    print('4- Incluir um contato na agenda\n')
-    print('5- Pesquisar um contato na agenda\n')
+    print('Essas sao as opcoes da agenda')
+    print('1- Mostrar todos os contatos')
+    print('2- Editar um contato da agenda')
+    print('3- Excluir um contato da agenda')
+    print('4- Incluir um contato na agenda')
+    print('5- Pesquisar um contato na agenda')
     print('0- Fechar agenda\n')
 
 
@@ -51,7 +51,7 @@ def opcoes_agenda():
     if (OPCAO == '1'):
         mostrar_contatos()
 
-    if (OPCAO == '2'):
+    elif (OPCAO == '2'):
         mostrar_contatos()
 
         print('Qual nome editar inserir?')
@@ -77,13 +77,13 @@ def opcoes_agenda():
         else:
             print('\nAs alteracoes ja foram salvas, obrigado por usar agenda!')
 
-    if (OPCAO == '3'):
+    elif (OPCAO == '3'):
         mostrar_contatos()
         print('Qual contato gostaria de excluir?')
         contato = input()
         excluir_contato(contato)
 
-    if (OPCAO == '4'):
+    elif (OPCAO == '4'):
         print('Insira o nome do seu novo contato')
         contato = input()
         print('Insira o telefone do seu novo contato')
@@ -95,14 +95,17 @@ def opcoes_agenda():
 
         incluir_editar_contato(contato, telefone, email, endereco)
 
-    if (OPCAO == '5'):
+    elif (OPCAO == '5'):
         print('Qual o nome do contato que gostaria de pesquisar na agenda?')
         contato = input()
         print('\nSegue abaixo as informacoes do contato pesquisado:\n')
         buscar_contatos(contato)
 
-    if (OPCAO == '0'):
+    elif (OPCAO == '0'):
         print('Agenda fechada. Te vejo na proxima consulta!')
+    else:
+        print('Escolha uma opcao valida!\n')
+        opcoes_agenda()
 
 
 opcoes_agenda()
